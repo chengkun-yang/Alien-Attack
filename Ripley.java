@@ -3,7 +3,9 @@
  * EID: YOUR EID
  */
 
-/**
+ import java.util.List;
+
+ /**
  * Ripley is a character that can fight aliens.
  */
 
@@ -11,15 +13,24 @@
 // This declaration may change in your implementation 
 public class Ripley extends GameCharacter
 {
-
+    String name;
+    int health;
+    int attack;
+    int speed;
   /**
    * Constructor for Ripley
+   * @param name - passes in name
+   * @param health - passes in health
+   * @param attack - passes in attack
+   * @param speed - passes in speed
+   *
    */ 
   public Ripley(String name, int health, int attack, int speed) {
-      name = ripleyParts[0].trim();
-      health = Integer.parseInt(ripleyParts[1]);
-      attack = Integer.parseInt(ripleyParts[2]);
-      speed = Integer.parseInt(ripleyParts[3]);
+      super(name, health, attack, speed);
+      this.name = name;
+      this.health = health;
+      this.attack = attack;
+      this.speed = speed;
     }
   
   /**
@@ -30,10 +41,6 @@ public class Ripley extends GameCharacter
     hit(alien);
   }
 
-  @Override
-  public void slowDown(int speedDamage) {
-    super.slowDown(speedDamage);
-  }
   // FILL IN ANYTHING ELSE YOU NEED HERE
 
 }

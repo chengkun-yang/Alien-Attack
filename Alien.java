@@ -8,15 +8,19 @@
 // FILL IN HERE - This declaration may change in your implementation 
 public class Alien extends GameCharacter{
   // FILL IN YOUR INSTANCE VARIABLES HERE
-  private final int speedDamage = 0;
+  private int speedDamage = 0;
+  String name;
+  int health;
+  int attack;
+  int speed;
   /** Constructor: an instance with a name, health, attack, speed, and damage */
    Alien(String name, int health, int attack, int speed, int speedDamage) {
-    // FILL IN YOUR CONSTRUCTOR HERE
-       name = lines[1].trim();
-       health = Integer.parseInt(lines[2]);
-       attack = Integer.parseInt(lines[3]);
-       speed = Integer.parseInt(lines[4]);
-       super(speedDamage) = Integer.parseInt(lines[5]);
+       super(name, health, attack, speed);
+       this.name = name;
+       this.health = health;
+       this.attack = attack;
+       this.speed = speed;
+       this.speedDamage = speedDamage;
    }
    public void fight(Ripley ripley){
        super.hit(ripley);

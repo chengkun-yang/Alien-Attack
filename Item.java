@@ -6,18 +6,22 @@
 /**
  * Simple class to hold item data.
  */
-final class Item 
+final class Item extends GameCharacter
 {
-  private String name;
-  private int health;
-  private int attack;
-  private int speed;
+  private final String name;
+  private final int health;
+  private final int attack;
+  private final int speed;
 
   Item(String name, int health, int attack, int speed) {
-    name = lines[6].trim();
-    health = Integer.parseInt(lines[7]);
-    final Integer attack = Integer.parseInt(lines[8]);
-    final Integer speed = Integer.parseInt(lines[9]);  }
+    super(name, health, attack, speed);
+    this.name = name;
+    this.health = health;
+    this.attack = attack;
+    this.speed = speed;
+  }
+
+
   // FILL IN WHATEVER ELSE YOU NEED HERE 
 }
 

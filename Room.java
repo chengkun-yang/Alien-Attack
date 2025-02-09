@@ -8,15 +8,15 @@
  */
 final class Room 
 { 
-  private String name;
-  private Alien alien; 
-  private Item item; 
+  private final String name;
+  private final Alien alien;
+  private final Item item;
 
   public Room(String name, Alien alien, Item item) {
      // FILL IN HERE
-    this.name = roomParts[0].trim();
-    this.alien = parseAlien(roomParts);
-    this.item = parseItem(roomParts);
+    this.name = name;
+    this.alien = alien;
+    this.item = item;
   }
   public String getName(){  return this.name;}
   public Alien getAlien(){ return this.alien;}
