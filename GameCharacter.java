@@ -46,6 +46,7 @@ public class GameCharacter {
   public void setSpeed(int tempSpeed) {
     this.speed = tempSpeed;
   }
+
   // FILL IN ANY accessors or mutators that are missing
   
   /**

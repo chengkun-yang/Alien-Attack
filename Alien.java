@@ -26,5 +26,8 @@ public class Alien extends GameCharacter{
        super.hit(ripley);
        ripley.slowDown(speedDamage);
    }
+    public int getSpeedDamage() {
+        return this.speedDamage;
+    }
   // FILL IN OTHER METHODS HERE
 }
