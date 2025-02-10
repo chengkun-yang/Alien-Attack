@@ -13,7 +13,12 @@ public class GameCharacter {
   private int attack;
   private int speed;
 
-  /** Constructor: An instance with a name, initial health, attack points, and speed */
+  /** Constructor: An instance with a name, initial health, attack points, and speed
+   * @param name - default name
+   * @param health - default health
+   * @param attack - default attack
+   * @param speed - default speed
+   */
   public GameCharacter(String name, int health, int attack, int speed) {
     this.name = name;
     this.health = health;
@@ -80,6 +85,7 @@ public class GameCharacter {
 
   /**
    * Basic functions to check health of alien or ripley
+   * @return if the character is dead or not
    */
   public boolean isAlive() {
     return this.health > 0;

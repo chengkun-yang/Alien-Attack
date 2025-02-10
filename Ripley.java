@@ -30,7 +30,7 @@ public class Ripley extends GameCharacter
     }
   
   /**
-   * Fight an aliens
+   * Fight an alien
    * @param alien - alien object, calls hit method in GameCharacter class
    */
   public void fight(Alien alien) {
