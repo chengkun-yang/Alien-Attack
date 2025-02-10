@@ -1,4 +1,5 @@
-Ripley,1000,10,20
-Hallway,Xenomorph,20,6,40,8,Blaster,0,4,5
-Break Room,Face Hugger,30,10,5,24,Force Field,5,0,10
-Engine Room,Queen,50,40,200,100,Escape pod,0,0,0
+Ripley,1000,10,0
+Hallway,Xenomorph,20,10,20,8,Blaster,0,4,0
+Break Room,Face Hugger,30,10,0,20,Force Field,5,0,0
+Engine Room,Queen,50,40,0,20,Escape pod,0,0,0
+Final Room,noAlien,0,0,0,0,Escape,0,0,0

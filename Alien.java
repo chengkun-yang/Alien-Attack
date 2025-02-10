@@ -1,6 +1,6 @@
- /* Author: YOUR NAME
- * Date: TODAY'S DATE
- * EID: YOUR EID
+ /* Author: Chengkun Yang
+ * Date: 2/9/2025
+ * EID: cy7496
  */
 
 /** An object of class Alien represents an alien in the game.  */

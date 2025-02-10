@@ -46,7 +46,7 @@ public final class Game {
       System.out.println("Room: " + room.getName() + ". " + ripley.getName() + " encounters a " + room.getAlien().getName());
       System.out.println("    " + room.getAlien().getName() + " - " + "health: " + room.getAlien().getHealth() + " speed: " + room.getAlien().getSpeed() + " attack: " + room.getAlien().getAttack() + " speed damage: " + room.getAlien().getSpeedDamage());
       //if alien is faster or same, returns false, else returns true
-      turn = room.getAlien().getSpeed() <= ripley.getSpeed();
+      turn = room.getAlien().getSpeed() < ripley.getSpeed();
       //turn based to check who is faster and fighting portion
       while(ripley.isAlive() && room.getAlien().isAlive()) {
         if (turn) {
