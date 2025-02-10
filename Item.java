@@ -3,22 +3,45 @@
  * EID: YOUR EID
  */
 
-/**
- * Simple class to hold item data.
- */
-final class Item extends GameCharacter
+ /** Class to hold item data
+  * Author: Chengkun Yang
+  * EID: cy7496
+  */
+final class Item
 {
   private final String name;
   private final int health;
   private final int attack;
   private final int speed;
 
+  /**
+   * Default constructor for item class
+   * @param name - item name
+   * @param health - item health value
+   * @param attack - item attack value
+   * @param speed - item speed value
+   */
   Item(String name, int health, int attack, int speed) {
-    super(name, health, attack, speed);
     this.name = name;
     this.health = health;
     this.attack = attack;
     this.speed = speed;
+  }
+
+  /**
+   * Getters for item class
+   */
+  public String getName() {
+    return this.name;
+  }
+  public int getHealth() {
+    return this.health;
+  }
+  public int getAttack() {
+    return this.attack;
+  }
+  public int getSpeed() {
+    return this.speed;
   }
 
 

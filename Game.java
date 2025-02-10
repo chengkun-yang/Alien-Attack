@@ -7,6 +7,9 @@
  * The main game logic.
  */
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,40 +34,47 @@ public final class Game {
   
   /**
    * This method implements the main loop in the game
+   * prints out each line of text corresponding to action
    */
-  public void play(){
+  public void play() throws FileNotFoundException {
        // FILL IN THE MAIN LOOP FOR GAME PLAY HERE
     boolean turn;
     System.out.println("       Welcome to Alien Attack!\n" + "       ------------------------\n");
-    System.out.println("Ripley starts with health: " + ripley.getHealth() + " speed: " + ripley.getSpeed() + " attack: " + ripley.getAttack() + "\n");
+    System.out.println(ripley.getName() + " starts with health: " + ripley.getHealth() + " speed: " + ripley.getSpeed() + " attack: " + ripley.getAttack() + "\n");
+    //basic gameplay combat loop
     for (Room room : rooms) {
-      System.out.println("Room: " + room.getName() + ". " + "Ripley encounters a " + room.getAlien().getName());
+      System.out.println("Room: " + room.getName() + ". " + ripley.getName() + " encounters a " + room.getAlien().getName());
       System.out.println("    " + room.getAlien().getName() + " - " + "health: " + room.getAlien().getHealth() + " speed: " + room.getAlien().getSpeed() + " attack: " + room.getAlien().getAttack() + " speed damage: " + room.getAlien().getSpeedDamage());
-      turn = room.getAlien().getSpeed() <= ripley.getSpeed(); //if alien is faster or same, returns false, else returns true
+      //if alien is faster or same, returns false, else returns true
+      turn = room.getAlien().getSpeed() <= ripley.getSpeed();
+      //turn based to check who is faster and fighting portion
       while(ripley.isAlive() && room.getAlien().isAlive()) {
         if (turn) {
-          System.out.println("Ripley attacks " + room.getAlien().getName() + ", causing " + ripley.getAttack() + " damage.");
+          System.out.println(ripley.getName() + " attacks " + room.getAlien().getName() + ", causing " + ripley.getAttack() + " damage.");
           ripley.fight(room.getAlien());
           turn = false;
         }
         else {
-          System.out.println(room.getAlien().getName() + " attacks Ripley, causing " + room.getAlien().getAttack() + " damage.");
+          System.out.println(room.getAlien().getName() + " attacks " + ripley.getName() + ", causing " + room.getAlien().getAttack() + " damage.");
           room.getAlien().fight(ripley);
           turn = true;
         }
       }
+      //adds item if ripley kills alien
       if(ripley.isAlive()) {
         System.out.println(room.getAlien().getName() + " is defeated!");
-        System.out.println("Ripley finds " + room.getItem().getName() + "\n");
+        System.out.println(ripley.getName() + " finds " + room.getItem().getName() + "\n");
         ripley.useItem(room.getItem());
       }
+      //breaks if ripley is dead before alien
       else if(ripley.isDead()) {
-        System.out.println("Ripley is dead - GAME OVER!\n");
+        System.out.println( ripley.getName() + " is dead - GAME OVER!");
         break;
       }
     }
+    //if all rooms cleared, win message
     if(ripley.isAlive()) {
-      System.out.println("Ripley wins!\n");
+      System.out.println(ripley.getName() + " wins!");
     }
   }
 }

@@ -1,0 +1,4 @@
+Ripley,500,15,25
+Storage Room,Alien Drone,40,12,30,10,Laser Rifle,3,6,8
+Control Room,Face Hugger,20,8,5,18,Energy Shield,4,2,7
+Escape Bay,Alien King,60,50,250,120,Victory Flag,0,0,0

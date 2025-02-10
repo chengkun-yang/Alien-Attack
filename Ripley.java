@@ -6,17 +6,17 @@
  import java.util.List;
 
  /**
- * Ripley is a character that can fight aliens.
+  * Ripley is a character that can fight aliens.
+  * Extends the GameCharacter class, uses same inputs
+  * Author: Chengkun Yang
+  * EID: cy7496
  */
 
 // FILL IN YOUR IMPLEMENTATION OF THE RIPLEY CLASS HERE 
 // This declaration may change in your implementation 
 public class Ripley extends GameCharacter
 {
-    String name;
-    int health;
-    int attack;
-    int speed;
+
   /**
    * Constructor for Ripley
    * @param name - passes in name
@@ -27,14 +27,11 @@ public class Ripley extends GameCharacter
    */ 
   public Ripley(String name, int health, int attack, int speed) {
       super(name, health, attack, speed);
-      this.name = name;
-      this.health = health;
-      this.attack = attack;
-      this.speed = speed;
     }
   
   /**
-   * Fight an alien 
+   * Fight an aliens
+   * @param alien - alien object, calls hit method in GameCharacter class
    */
   public void fight(Alien alien) {
     //FILL IN YOUR FIGHT CODE HERE

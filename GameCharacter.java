@@ -51,6 +51,7 @@ public class GameCharacter {
   
   /**
    * Attacks the given target by reducing its health by the attack value.
+   * @param target - object to have health reduced
    */
   public void hit(GameCharacter target) {
       // FILL IN HERE
@@ -59,6 +60,7 @@ public class GameCharacter {
 
   /**
    * Reduces the speed of the character by the given amount.
+   * @param speedDamage - how much slower the character gets
    */
   public void slowDown(int speedDamage) {
       // FILL IN HERE
@@ -76,6 +78,9 @@ public class GameCharacter {
     this.attack = this.attack + item.getAttack();
   }
 
+  /**
+   * Basic functions to check health of alien or ripley
+   */
   public boolean isAlive() {
     return this.health > 0;
   }

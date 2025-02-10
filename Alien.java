@@ -9,23 +9,26 @@
 public class Alien extends GameCharacter{
   // FILL IN YOUR INSTANCE VARIABLES HERE
   private int speedDamage = 0;
-  String name;
-  int health;
-  int attack;
-  int speed;
+
   /** Constructor: an instance with a name, health, attack, speed, and damage */
    Alien(String name, int health, int attack, int speed, int speedDamage) {
        super(name, health, attack, speed);
-       this.name = name;
-       this.health = health;
-       this.attack = attack;
-       this.speed = speed;
-       this.speedDamage = speedDamage;
+        this.speedDamage = speedDamage;
    }
+
+    /**
+     * modification of hit method from gamecharacter class
+     * @param ripley - ripley object to be attacked
+     */
    public void fight(Ripley ripley){
        super.hit(ripley);
        ripley.slowDown(speedDamage);
    }
+
+    /**
+     * Getter for speedDamage
+     * @return speedDamage - the amount speed is reduced by
+     */
     public int getSpeedDamage() {
         return this.speedDamage;
     }

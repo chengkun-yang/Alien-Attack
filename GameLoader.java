@@ -12,7 +12,9 @@ import java.util.List;
 public class GameLoader {
 
   /**
-   * Method called to parse entire file 
+   * Method called to parse entire file
+   * @param fileName - name of input file to be parsed
+   * @return Game - Game object containing ripley and rooms objects
    */
   public Game loadGame(String fileName) throws IOException {
           List<String> gameLines = Files.readAllLines(Path.of(fileName));
@@ -24,7 +26,9 @@ public class GameLoader {
   }
 
   /**
-   * Method for parsing a non-alien character 
+   * Method for parsing a non-alien character
+   * @param line - line in input file
+   * @return Ripley - returns ripley object
    */
   private Ripley parseRipley(String line) {
     final String[] ripleyParts = line.split(",");
@@ -37,6 +41,8 @@ public class GameLoader {
 
   /**
    * Method for parsing a room  specification
+   * @param line - line in input file
+   * @return Room - returns room object
    */
   private Room parseRoom(String line) {
     final String[] roomParts = line.split(",");
@@ -48,6 +54,8 @@ public class GameLoader {
 
   /**
    * Method for parsing an alien specification
+   * @param lines - part of line in input file
+   * @return Alien - returns alien object
    */
   private Alien parseAlien(String[] lines) {
     final String name = lines[1].trim();
@@ -60,6 +68,8 @@ public class GameLoader {
 
   /**
    * Method for parsing an item specification
+   * @param lines - part of line to be parsed by room
+   * @return Item - item object to be returned
    */
   private Item parseItem(String[] lines) {
     final String  name = lines[6].trim();
